@@ -3,6 +3,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using VerifyNUnit;
 using NUnit;
+using ObjToDict.Generator;
 
 namespace ObjToDict.Tests;
 
@@ -16,13 +17,13 @@ public static class TestHelper
         // We could add multiple references if required
         IEnumerable<PortableExecutableReference> references = new[]
         {
-            MetadataReference.CreateFromFile(typeof(object).Assembly.Location)
+            MetadataReference.CreateFromFile(typeof(ObjToDictAttribute).Assembly.Location)
         };
 
         CSharpCompilation compilation = CSharpCompilation.Create(
             assemblyName: "Tests",
             syntaxTrees: new[] { syntaxTree },
-            references: references); // 👈 pass the references to the compilation
+            references: references);
 
 
         // Create an instance of our EnumGenerator incremental source generator
@@ -48,7 +49,7 @@ public class Tests
 namespace Test;
 
 [ObjToDict.ObjToDict]
-internal partial class TestClass
+internal partial record TestClass
 {
     public int A { get; set; } = 1;
     public double B = Math.PI;

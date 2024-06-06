@@ -27,7 +27,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ObjToDict\ObjToDict.csproj" />
+      <ProjectReference Include="..\ObjToDict.Generator\ObjToDict.Generator.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Snapshots\" />
     </ItemGroup>
 
 </Project>
