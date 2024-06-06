@@ -58,7 +58,7 @@ internal partial class TestClass : IObjToDict
         ret["_d"] = _d;
         return ret;
     }
-    public IDictionary<string, dynamic> ObjFromDict(IDictionary<string, dynamic> dict)
+    public void ObjFromDict(IDictionary<string, dynamic> dict)
     {
         A = (int)dict["A"];
         B = (double)dict["B"];
