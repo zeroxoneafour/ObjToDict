@@ -81,7 +81,7 @@ using ObjToDict;
     {
         var sb = new StringBuilder();
         sb.Append(@"
-    public IDictionary<string, dynamic> ObjFromDict(IDictionary<string, dynamic> dict)
+    public void ObjFromDict(IDictionary<string, dynamic> dict)
     {");
         foreach (var field in c.Fields)
         {
